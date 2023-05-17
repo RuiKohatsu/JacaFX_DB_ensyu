@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefWidth="516.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxdb.UserController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <GridPane prefWidth="476.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <Label text="ユーザー管理システム" GridPane.rowIndex="1" />
+         <Label text="ユーザー追加" GridPane.rowIndex="2">
+            <padding>
+               <Insets left="20.0" />
+            </padding>
+         </Label>
+         <Label text="所属企業" GridPane.rowIndex="3">
+            <GridPane.margin>
+               <Insets left="20.0" />
+            </GridPane.margin>
+         </Label>
+         <Label text="名前" GridPane.rowIndex="5">
+            <GridPane.margin>
+               <Insets left="20.0" />
+            </GridPane.margin>
+         </Label>
+         <Label text="スコア" GridPane.rowIndex="6">
+            <padding>
+               <Insets left="20.0" />
+            </padding>
+         </Label>
+         <TextField fx:id="addName" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <TextField fx:id="addScore" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         <ComboBox fx:id="addCompany" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <Label text="ユーザー編集" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <GridPane.margin>
+               <Insets left="20.0" />
+            </GridPane.margin></Label>
+         <Label text="所属企業" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <GridPane.margin>
+               <Insets left="20.0" />
+            </GridPane.margin></Label>
+         <Label text="名前" GridPane.columnIndex="3" GridPane.rowIndex="5">
+            <GridPane.margin>
+               <Insets left="20.0" />
+            </GridPane.margin></Label>
+         <Label text="スコア" GridPane.columnIndex="3" GridPane.rowIndex="6">
+            <GridPane.margin>
+               <Insets left="20.0" />
+            </GridPane.margin></Label>
+         <Button mnemonicParsing="false" onAction="#addInfo" text="追加" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <GridPane.margin>
+               <Insets top="5.0" />
+            </GridPane.margin></Button>
+         <Button mnemonicParsing="false" onAction="#deleteInfo" text="削除" GridPane.columnIndex="3" GridPane.rowIndex="7">
+            <GridPane.margin>
+               <Insets left="20.0" top="5.0" />
+            </GridPane.margin></Button>
+         <Button mnemonicParsing="false" onAction="#updateInfo" text="更新" GridPane.columnIndex="4" GridPane.rowIndex="7">
+            <GridPane.margin>
+               <Insets top="5.0" />
+            </GridPane.margin></Button>
+         <TextField fx:id="editName" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+         <TextField fx:id="editScore" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+         <ComboBox fx:id="editCompany" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+         <Button mnemonicParsing="false" onAction="#search" text="検索" textAlignment="CENTER" GridPane.columnIndex="3">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="20.0" />
+            </GridPane.margin></Button>
+         <TextField fx:id="searchName" GridPane.columnIndex="4" />
+         <Button mnemonicParsing="false" onAction="#back" text="戻る" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <GridPane.margin>
+               <Insets left="20.0" top="5.0" />
+            </GridPane.margin>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#manageCompany" text="企業管理">
+            <GridPane.margin>
+               <Insets left="20.0" />
+            </GridPane.margin>
+         </Button>
+      </children>
+   </GridPane>
+   <AnchorPane prefHeight="32.0" prefWidth="470.0">
+      <children>
+         <Label fx:id="error" layoutX="221.0" layoutY="8.0" />
+      </children>
+   </AnchorPane>
+   <TableView fx:id="myTableView" onMouseClicked="#selectTable" prefHeight="180.0" prefWidth="360.0">
+     <columns>
+       <TableColumn fx:id="iColumn" prefWidth="90.0" text="ID" />
+         <TableColumn fx:id="cColumn" prefWidth="90.0" text="所属企業" />
+       <TableColumn fx:id="nColumn" prefWidth="90.0" text="名前" />
+         <TableColumn fx:id="sColumn" prefWidth="90.0" text="スコア" />
+     </columns>
+   </TableView>
+</VBox>
