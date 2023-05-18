@@ -15,13 +15,13 @@ public class UserService {
         this.userDao = new UserDao(connection);
     }
 
-    public void infoInit(){
-        try{
-           userDao.infoInit();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void infoInit(){
+//        try{
+//           userDao.infoInit();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public ObservableList<User> join(){
         try{

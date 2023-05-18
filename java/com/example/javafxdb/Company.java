@@ -14,7 +14,7 @@ public class Company {
         return id;
     }
 
-    public String getCompany() {
+    public String getName() {
         return name;
     }
 
@@ -23,7 +23,7 @@ public class Company {
         this.id = id;
     }
 
-    public void setCompany(String name){
+    public void setName(String name){
         this.name = name;
     }
 

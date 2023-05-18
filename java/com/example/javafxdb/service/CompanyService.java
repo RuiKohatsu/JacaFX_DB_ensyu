@@ -24,4 +24,31 @@ public class CompanyService {
         }
     }
 
+    public ObservableList<Company> insertCompany(String infoCompany){
+        try{
+            return companyDao.insertCompany(infoCompany);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public ObservableList<Company> deleteCompany(int id){
+        try{
+            return companyDao.deleteCompany(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public ObservableList<Company> updateCompany(int id, String infoCompany){
+        try{
+            return companyDao.updateCompany(id, infoCompany);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

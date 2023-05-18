@@ -17,19 +17,19 @@ public class UserDao {
         this.connection = connection;
     }
 
-    public void infoInit() throws SQLException{
-        final var SQL = "INSERT INTO companies VALUES (1, '株式会社A')" +
-                ",(2, '株式会社B')" +
-                ",(3, '株式会社C')";
-        PreparedStatement stmt = this.connection.prepareStatement(SQL);
-        stmt.executeUpdate();
-
-        final var SQL1 = "INSERT INTO users VALUES (1, '山田太郎', 3, 85)" +
-                ",(2, '山田次郎', 2, 76)" +
-                ",(3, '山田三郎', 1, 92)";
-        PreparedStatement stmt1 = this.connection.prepareStatement(SQL1);
-        stmt1.executeUpdate();
-    }
+//    public void infoInit() throws SQLException{
+//        final var SQL = "INSERT INTO companies(name) VALUES ('株式会社A')" +
+//                ",('株式会社B')" +
+//                ",('株式会社C')";
+//        PreparedStatement stmt = this.connection.prepareStatement(SQL);
+//        stmt.executeUpdate();
+//
+//        final var SQL1 = "INSERT INTO users(name, company_id, score) VALUES ('山田太郎', 3, 85)" +
+//                ",('山田次郎', 2, 76)" +
+//                ",('山田三郎', 1, 92)";
+//        PreparedStatement stmt1 = this.connection.prepareStatement(SQL1);
+//        stmt1.executeUpdate();
+//    }
 
     public ObservableList<User> join() throws SQLException{
         final var SQL = "SELECT u.id AS id, c.name AS company_name, u.name AS user_name, score " +
@@ -51,7 +51,7 @@ public class UserDao {
     }
 
     public ObservableList<String> itemSelect() throws SQLException{
-        final var SQL = "SELECT name FROM companies";
+        final var SQL = "SELECT name FROM companies ORDER BY id";
         ObservableList<String> list = FXCollections.observableArrayList();
         PreparedStatement stmt = this.connection.prepareStatement(SQL);
         ResultSet rs = stmt.executeQuery();

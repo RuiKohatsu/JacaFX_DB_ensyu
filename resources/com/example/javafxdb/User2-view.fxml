@@ -50,7 +50,7 @@
          </Label>
          <TextField fx:id="addName" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          <TextField fx:id="addScore" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-         <ComboBox fx:id="addCompany" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <ComboBox fx:id="addCompanyCombo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          <Label text="ユーザー編集" GridPane.columnIndex="3" GridPane.rowIndex="2">
             <GridPane.margin>
                <Insets left="20.0" />
@@ -81,7 +81,7 @@
             </GridPane.margin></Button>
          <TextField fx:id="editName" GridPane.columnIndex="4" GridPane.rowIndex="5" />
          <TextField fx:id="editScore" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-         <ComboBox fx:id="editCompany" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+         <ComboBox fx:id="editCompanyCombo" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
          <Button mnemonicParsing="false" onAction="#search" text="検索" textAlignment="CENTER" GridPane.columnIndex="3">
             <GridPane.margin>
                <Insets bottom="5.0" left="20.0" />
@@ -97,6 +97,7 @@
                <Insets left="20.0" />
             </GridPane.margin>
          </Button>
+         <Button mnemonicParsing="false" onAction="#initialize" text="更新" GridPane.columnIndex="1" />
       </children>
    </GridPane>
    <AnchorPane prefHeight="32.0" prefWidth="470.0">
